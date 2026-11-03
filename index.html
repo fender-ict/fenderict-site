@@ -51,6 +51,7 @@
   --ink: var(--diepzee);
   --ink-soft: var(--leisteen);
   --line: #D9E0E7;
+  --line-strong: #C3CDD7;
   --accent-text: var(--baksteen);
 
   --sans: "Manrope", "Segoe UI", system-ui, sans-serif;
@@ -65,6 +66,7 @@
     --ink: #FFFFFF;
     --ink-soft: var(--op-donker);
     --line: var(--diepzee-line);
+    --line-strong: #34506B;
     --accent-text: var(--baksteen-licht);
     color-scheme: dark;
   }
@@ -75,6 +77,7 @@
   --ink: #FFFFFF;
   --ink-soft: var(--op-donker);
   --line: var(--diepzee-line);
+  --line-strong: #34506B;
   --accent-text: var(--baksteen-licht);
   color-scheme: dark;
 }
@@ -129,21 +132,21 @@ a { color: inherit; }
 }
 .hero h1 span { color: var(--baksteen-licht); }
 .hero .lead { margin: 28px 0 0; max-width: 680px; font-size: 19px; font-weight: 500; line-height: 1.6; color: var(--op-donker); }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+/* Knoppen zoals op filiptruyens.be: compact, lijnicoon, hoofdknop in Baksteen, de rest met een rand. */
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
 .btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  min-height: 50px; padding: 0 22px;
-  border-radius: 10px;
-  font-size: 16px; font-weight: 700;
-  text-decoration: none;
-  transition: background-color .15s, border-color .15s, color .15s;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 14px; border-radius: 10px;
+  font: 700 15px/1 var(--sans); text-decoration: none;
+  background: var(--baksteen); color: #FFFFFF; border: 1px solid var(--baksteen);
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
 }
-.btn.primary { background: var(--baksteen); color: #FFFFFF; }
-.btn.primary:hover { background: var(--baksteen-hover); }
-.btn.ghost { border: 1.5px solid var(--diepzee-line); color: #FFFFFF; }
-.btn.ghost:hover { border-color: var(--op-donker-mute); }
-.btn .arrow { transition: transform .15s; }
-.btn:hover .arrow { transform: translateX(3px); }
+.btn:hover { background: var(--baksteen-hover); border-color: var(--baksteen-hover); color: #FFFFFF; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+.btn.ghost:hover { border-color: var(--ink); background: transparent; color: var(--ink); }
+.hero .btn.ghost { color: #FFFFFF; border-color: #34506B; }
+.hero .btn.ghost:hover { border-color: #FFFFFF; }
+.btn svg { width: 16px; height: 16px; flex: none; }
 .tagline { border-top: 1px solid var(--diepzee-line); padding: 24px 0 32px; font-size: 15px; font-weight: 600; color: var(--op-donker-mute); }
 
 /* Diensten */
@@ -162,13 +165,6 @@ a { color: inherit; }
 .about .grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: center; }
 .about h2 { margin: 14px 0 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
 .about p.text { margin: 20px 0 0; font-size: 18px; color: var(--ink-soft); }
-.about .link {
-  display: inline-flex; align-items: center; gap: 10px; margin-top: 28px;
-  font-size: 17px; font-weight: 700; color: var(--accent-text); text-decoration: none;
-  border-bottom: 2px solid currentColor; padding-bottom: 2px;
-}
-.about .link:hover .arrow { transform: translateX(3px); }
-.about .link .arrow { transition: transform .15s; }
 .label.mute { margin-bottom: 14px; color: var(--ink-soft); }
 .stats { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .stats li { display: flex; align-items: baseline; gap: 20px; padding: 20px 0; border-top: 1px solid var(--line); }
@@ -208,7 +204,6 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
   .hero .lens-bg { width: 560px; height: 560px; right: -260px; top: -120px; }
   .hero-body { padding: 40px 0 48px; }
   .hero .lead { font-size: 17px; }
-  .actions .btn { width: 100%; justify-content: center; }
   .services { padding: 64px 0; }
   .cards { margin-top: 32px; gap: 16px; }
   .card { padding: 24px 22px 26px; }
@@ -251,8 +246,9 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
       <h1>Van idee tot AI met waarde, <span>samen met je team.</span></h1>
       <p class="lead">AI Advisory is een brand van Fender ICT en een initiatief van Filip Truyens: één aanspreekpunt, van advies tot werkende oplossing. Samen kijken waar AI past, de oplossing op locatie mee bouwen en het team leren ermee werken.</p>
       <div class="actions">
-        <a class="btn primary" href="mailto:filip@fenderict.be">Mail Filip <span class="arrow" aria-hidden="true">→</span></a>
-        <a class="btn ghost" href="https://filiptruyens.be/">Over Filip Truyens <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn" href="mailto:filip@fenderict.be"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="m2.5 4.5 5.5 4.5 5.5-4.5"/></svg>Mail Filip</a>
+        <a class="btn ghost" href="https://filiptruyens.be/nl/over-mij.html">Over Filip<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2.5h4.5V7M13.5 2.5 7 9"/></svg></a>
+        <a class="btn ghost" href="https://www.linkedin.com/company/fender-ict/" rel="noopener" target="_blank">LinkedIn<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2.5h4.5V7M13.5 2.5 7 9"/></svg></a>
       </div>
     </div>
 
@@ -281,6 +277,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
           <p>Hands-on opleiding waarin je team een eigen AI-werkomgeving bouwt.</p>
         </li>
       </ul>
+      <div class="actions"><a class="btn ghost" href="https://filiptruyens.be/nl/ervaring.html">Ervaring Filip<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2.5h4.5V7M13.5 2.5 7 9"/></svg></a></div>
     </div>
   </section>
 
@@ -290,7 +287,6 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
         <p class="label">Wie</p>
         <h2 id="over">Filip Truyens</h2>
         <p class="text">Filip weet hoe moeilijk IT-transformatie kan zijn, bij banken, verzekeraars en de overheid: organisaties waar fouten duur zijn. Die ervaring zet hij nu in bij kleinere ondernemingen.</p>
-        <a class="link" href="https://filiptruyens.be/">Ervaring en cv op filiptruyens.be <span class="arrow" aria-hidden="true">→</span></a>
       </div>
       <div>
       <p class="label mute">Kerncijfers</p>
