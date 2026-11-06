@@ -160,15 +160,13 @@ a { color: inherit; }
 .card h3 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; }
 .card p { margin: 10px 0 0; padding-left: 22px; font-size: 16px; color: var(--ink-soft); }
 .card { display: flex; flex-direction: column; }
-.card .duur { margin-top: auto; padding: 18px 0 0 22px; font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); }
+.card .duur { margin-top: auto; padding: 18px 0 0 22px; line-height: 1.7; font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); }
 
 /* Typisch traject: vijf stappen */
 .traject { margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line); }
 .traject h3 { margin: 14px 0 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
 .steps { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; counter-reset: stap; }
-.lanes { margin-top: 32px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px 20px; }
-.lane { display: flex; align-items: center; min-height: 34px; padding: 6px 12px; border-radius: 8px; background: var(--baksteen); color: #FFFFFF; font-size: 13.5px; font-weight: 700; line-height: 1.2; }
-.step { padding-top: 16px; border-top: 2px solid var(--baksteen); }
+.step { padding: 18px 16px 20px; border: 1px solid var(--line); border-top: 3px solid var(--baksteen); border-radius: 12px; background: var(--bg); }
 .step .n { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent-text); }
 .step h4 { margin: 6px 0 0; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; }
 .step .who { display: flex; align-items: flex-start; gap: 8px; margin: 6px 0 0; font-size: 14px; font-weight: 700; color: var(--ink); }
@@ -176,11 +174,12 @@ a { color: inherit; }
 .step ul { list-style: none; margin: 12px 0 0; padding: 0; }
 .step li { position: relative; padding-left: 14px; margin-top: 6px; font-size: 15px; line-height: 1.45; color: var(--ink-soft); }
 .step li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 5px; height: 5px; border-radius: 50%; background: var(--baksteen); }
-.step .who { display: none; }   /* op desktop tonen de banen wie wat doet */
 
 /* Van second brain naar company brain */
-.brain { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line); }
-.brain h3 { margin: 14px 0 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+.brain { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+.brain-sec { padding: 88px 0; background: var(--diepzee); color: var(--ink);
+  --ink: #FFFFFF; --ink-soft: var(--op-donker); --line: var(--diepzee-line); --accent-text: var(--baksteen-licht); }
+.brain h2 { margin: 14px 0 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
 .brain p.text { margin: 16px 0 0; font-size: 17px; color: var(--ink-soft); }
 .nobr { white-space: nowrap; }
 .needs { list-style: none; margin: 0; padding: 0; }
@@ -222,8 +221,6 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
   .cards { grid-template-columns: minmax(0, 1fr); }
   .about .grid, .contact .grid, .brain { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
-  .lanes { display: none; }
-  .step .who { display: flex; }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
@@ -239,8 +236,8 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
   .services { padding: 64px 0; }
   .cards { margin-top: 32px; gap: 16px; }
   .card { padding: 24px 22px 26px; }
-  .steps { grid-template-columns: minmax(0, 1fr); }
-  .about, .contact { padding: 64px 0; }
+  .steps { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .about, .contact, .brain-sec { padding: 64px 0; }
   .stats .n { font-size: 34px; min-width: 80px; }
   .contact dl { font-size: 16px; }
 }
@@ -294,34 +291,28 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
     <div class="wrap">
       <div class="section-head">
         <p class="label">Aanpak</p>
-        <h2 id="diensten">Van advies tot werkende oplossing.</h2>
+        <h2 id="diensten">Drie pijlers, één traject.</h2>
       </div>
       <ul class="cards">
         <li class="card">
           <div class="title"><span class="dot" aria-hidden="true"></span><h3>AI-advies</h3></div>
-          <p>Waar past AI in je bedrijf, waar niet, en wat mag het? Met een eerlijke businesscase: wat levert AI op?</p>
-          <p class="duur">Korte duurtijd</p>
+          <p>Waar past AI in je organisatie, waar niet, en wat mag het? Je IT in kaart, een strategie en een plan met een eerlijke businesscase, en opvolging achteraf.</p>
+          <p class="duur">Korte duurtijd<br>Stap 01, 02 en 05</p>
         </li>
         <li class="card">
           <div class="title"><span class="dot" aria-hidden="true"></span><h3>Forward Deployed Engineer</h3></div>
           <p>Geen advies vanop afstand. Op locatie meebouwen tot de oplossing werkt.</p>
-          <p class="duur">Langere duurtijd</p>
+          <p class="duur">Langere duurtijd<br>Stap 03</p>
         </li>
         <li class="card">
           <div class="title"><span class="dot" aria-hidden="true"></span><h3>Training</h3></div>
-          <p>Hands-on opleiding waarin elke medewerker een eigen AIOS bouwt: een second brain.</p>
-          <p class="duur">Middellange duurtijd</p>
+          <p>Het team leert werken met de oplossing, want adoptie maakt het verschil. Elke medewerker bouwt een eigen AIOS: een second brain.</p>
+          <p class="duur">Middellange duurtijd<br>Stap 04 en 05</p>
         </li>
       </ul>
       <div class="traject">
         <p class="label">Typisch traject</p>
         <h3>Van cartografie tot aftercare.</h3>
-        <div class="lanes" aria-hidden="true">
-          <span class="lane" style="grid-row: 1; grid-column: 1 / 3">AI-advies</span>
-          <span class="lane" style="grid-row: 1; grid-column: 5 / 6">AI-advies</span>
-          <span class="lane" style="grid-row: 2; grid-column: 3 / 4">Forward Deployed Engineer</span>
-          <span class="lane" style="grid-row: 3; grid-column: 4 / 6">Training</span>
-        </div>
         <ol class="steps">
           <li class="step">
             <span class="n">01</span>
@@ -355,25 +346,28 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
           </li>
         </ol>
       </div>
-      <div class="brain">
-        <div>
-          <p class="label">Second brain en company brain</p>
-          <h3>De echte winst zit in de kennis van je organisatie.</h3>
-          <p class="text">Losse processen automatiseren blijft nuttig, maar het is niet meer genoeg. Elke medewerker beschikt best over een eigen AIOS, een second brain, en werkt er dagelijks mee. Die kennis komt ook samen in een gedeelde laag, waar mensen en <span class="nobr">AI-agents</span> samenwerken. Zo bouw je stap voor stap een company brain dat zichzelf continu verbetert.</p>
-        </div>
-        <div>
-          <p class="label mute">Wat je organisatie hiervoor nodig heeft</p>
-          <ul class="needs">
-            <li>Buy-in op directieniveau</li>
-            <li>Claude of ChatGPT met een teamplan</li>
-            <li>Opleiding voor alle kennismedewerkers</li>
-            <li>Een AI-champion in huis</li>
-            <li>IT mee aan tafel, van bij de start</li>
-            <li>Iemand die het mee uitrolt tot het werkt: een Forward Deployed Engineer</li>
-          </ul>
-        </div>
-      </div>
       <div class="actions"><a class="btn ghost" href="https://filiptruyens.be/nl/ervaring.html">Ervaring Filip<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2.5h4.5V7M13.5 2.5 7 9"/></svg></a></div>
+    </div>
+  </section>
+
+  <section class="brain-sec" aria-labelledby="brain">
+    <div class="wrap brain">
+      <div>
+        <p class="label">Second brain en company brain</p>
+        <h2 id="brain">De echte winst zit in de kennis van je organisatie.</h2>
+        <p class="text">Losse processen automatiseren blijft nuttig, maar het is niet meer genoeg. Elke medewerker beschikt best over een eigen AIOS, een second brain, en werkt er dagelijks mee. Die kennis komt ook samen in een gedeelde laag, waar mensen en <span class="nobr">AI-agents</span> samenwerken. Zo bouw je stap voor stap een company brain dat zichzelf continu verbetert.</p>
+      </div>
+      <div>
+        <p class="label mute">Wat je organisatie hiervoor nodig heeft</p>
+        <ul class="needs">
+          <li>Buy-in op directieniveau</li>
+          <li>Claude of ChatGPT met een teamplan</li>
+          <li>Opleiding voor alle kennismedewerkers</li>
+          <li>Een AI-champion in huis</li>
+          <li>IT mee aan tafel, van bij de start</li>
+          <li>Iemand die het mee uitrolt tot het werkt: een Forward Deployed Engineer</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -419,7 +413,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 
 <footer class="foot">
   <div class="wrap">
-    <span>Bijgewerkt op 6 november 2026 · v16 · Deze site gebruikt geen cookies</span>
+    <span>Bijgewerkt op 6 november 2026 · v17 · Deze site gebruikt geen cookies</span>
     <span class="company">Fender ICT bv · Goudbloemlaan 12, 2970 Schilde, België · Ondernemingsnummer BE 0465.243.969 · RPR Antwerpen, afdeling Antwerpen</span>
   </div>
 </footer>
