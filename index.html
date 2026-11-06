@@ -188,6 +188,14 @@ a { color: inherit; }
 .needs li::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--baksteen); transform: translateY(-1px); }
 .needs.fde { margin-top: 20px; }
 
+/* Testimonial: logo links, citaat rechts */
+.quote { margin: 64px 0 0; padding-top: 48px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 132px minmax(0, 1fr); column-gap: 48px; align-items: center; }
+.quote img { grid-row: 1 / span 2; width: 132px; height: auto; display: block; }
+.quote blockquote { margin: 0; }
+.quote blockquote p { margin: 0; max-width: 780px; font-size: clamp(19px, 2.1vw, 23px); font-weight: 600; letter-spacing: -0.01em; line-height: 1.5; color: var(--ink); }
+.quote figcaption { margin-top: 18px; font-size: 15px; font-weight: 500; color: var(--ink-soft); }
+.quote figcaption b { font-weight: 700; color: var(--ink); }
+
 /* Over Filip */
 .about { background: var(--band); padding: 88px 0; }
 .about .grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: center; }
@@ -220,6 +228,8 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 @media (max-width: 900px) {
   .cards { grid-template-columns: minmax(0, 1fr); }
   .about .grid, .contact .grid, .brain { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .quote { grid-template-columns: minmax(0, 1fr); margin-top: 48px; padding-top: 40px; }
+  .quote img { grid-row: auto; width: 96px; margin-bottom: 20px; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
 }
 @media (max-width: 640px) {
@@ -369,6 +379,15 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
         </ul>
       </div>
     </div>
+    <div class="wrap">
+      <figure class="quote">
+        <img src="assets/klanten/puur-reizen.svg" alt="Logo van Puur Reizen" width="132" height="144">
+        <div>
+          <blockquote><p>“Met zijn ruime ervaring leerde Filip ons kritisch kijken naar onze interne werking. Hij verbeterde onze bestaande tools en processen met de hulp van AI. Die totaalaanpak leverde ons team uitstekende verbeteringen en tijdswinst op.”</p></blockquote>
+        </div>
+        <figcaption><b>Koen en Sophie</b>, bestuurders Puur Reizen · november 2026</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="about" aria-labelledby="over">
@@ -413,7 +432,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 
 <footer class="foot">
   <div class="wrap">
-    <span>Bijgewerkt op 6 november 2026 · v18 · Deze site gebruikt geen cookies</span>
+    <span>Bijgewerkt op 6 november 2026 · v19 · Deze site gebruikt geen cookies</span>
     <span class="company">Fender ICT bv · Goudbloemlaan 12, 2970 Schilde, België · Ondernemingsnummer BE0465.243.969 · RPR Antwerpen, afdeling Antwerpen</span>
   </div>
 </footer>
