@@ -193,7 +193,9 @@ a { color: inherit; }
 
 /* Testimonial: logo links, citaat rechts */
 .quote { margin: 64px 0 0; padding-top: 48px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 132px minmax(0, 1fr); column-gap: 48px; align-items: center; }
-.quote img { grid-row: 1 / span 2; width: 132px; height: auto; display: block; }
+.quote .client { grid-row: 1 / span 2; display: block; border-radius: 8px; transition: opacity .15s ease; }
+.quote .client:hover { opacity: .85; }
+.quote img { width: 132px; height: auto; display: block; }
 .quote blockquote { margin: 0; }
 .quote blockquote p { margin: 0; max-width: 780px; font-size: clamp(19px, 2.1vw, 23px); font-weight: 600; letter-spacing: -0.01em; line-height: 1.5; color: var(--ink); }
 .quote figcaption { margin-top: 18px; font-size: 15px; font-weight: 500; color: var(--ink-soft); }
@@ -232,7 +234,8 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
   .cards { grid-template-columns: minmax(0, 1fr); }
   .about .grid, .contact .grid, .brain { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .quote { grid-template-columns: minmax(0, 1fr); margin-top: 48px; padding-top: 40px; }
-  .quote img { grid-row: auto; width: 96px; margin-bottom: 20px; }
+  .quote .client { grid-row: auto; justify-self: start; margin-bottom: 20px; }
+  .quote img { width: 96px; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
 }
 @media (max-width: 640px) {
@@ -384,7 +387,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
     </div>
     <div class="wrap">
       <figure class="quote">
-        <img src="assets/klanten/puur-reizen.svg" alt="Logo van Puur Reizen" width="132" height="144">
+        <a class="client" href="https://www.puurreizen.com/" rel="noopener" target="_blank" aria-label="Website van Puur Reizen (opent in een nieuw venster)"><img src="assets/klanten/puur-reizen.svg" alt="" width="132" height="144"></a>
         <div>
           <blockquote><p>“Met zijn ruime ervaring leerde Filip ons kritisch kijken naar onze interne werking. Hij verbeterde onze bestaande tools en processen met de hulp van AI. Filip adviseert eerlijk, en de AI die hij voor ons bouwde, is een extra medewerker die blijft bijleren. Zijn totaalaanpak leverde ons team uitstekende verbeteringen en tijdswinst op.”</p></blockquote>
         </div>
@@ -435,7 +438,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 
 <footer class="foot">
   <div class="wrap">
-    <span>Bijgewerkt op 6 november 2026 · v27 · Deze site gebruikt geen cookies</span>
+    <span>Bijgewerkt op 6 november 2026 · v28 · Deze site gebruikt geen cookies</span>
     <span class="company">Fender ICT bv · Goudbloemlaan 12, 2970 Schilde, België · Ondernemingsnummer BE0465.243.969 · RPR Antwerpen, afdeling Antwerpen</span>
   </div>
 </footer>
