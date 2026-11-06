@@ -159,6 +159,24 @@ a { color: inherit; }
 .card .dot { flex: none; width: 10px; height: 10px; margin-top: 9px; border-radius: 50%; background: var(--baksteen); }
 .card h3 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; }
 .card p { margin: 10px 0 0; padding-left: 22px; font-size: 16px; color: var(--ink-soft); }
+.card { display: flex; flex-direction: column; }
+.card .duur { margin-top: auto; padding: 18px 0 0 22px; font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); }
+
+/* Typisch traject: vijf stappen */
+.traject { margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line); }
+.traject h3 { margin: 14px 0 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+.steps { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; counter-reset: stap; }
+.lanes { margin-top: 32px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px 20px; }
+.lane { display: flex; align-items: center; min-height: 34px; padding: 6px 12px; border-radius: 8px; background: var(--baksteen); color: #FFFFFF; font-size: 13.5px; font-weight: 700; line-height: 1.2; }
+.step { padding-top: 16px; border-top: 2px solid var(--baksteen); }
+.step .n { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent-text); }
+.step h4 { margin: 6px 0 0; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; }
+.step .who { display: flex; align-items: flex-start; gap: 8px; margin: 6px 0 0; font-size: 14px; font-weight: 700; color: var(--ink); }
+.step .who::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 7px; border-radius: 50%; background: var(--baksteen); }
+.step ul { list-style: none; margin: 12px 0 0; padding: 0; }
+.step li { position: relative; padding-left: 14px; margin-top: 6px; font-size: 15px; line-height: 1.45; color: var(--ink-soft); }
+.step li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 5px; height: 5px; border-radius: 50%; background: var(--baksteen); }
+.step .who { display: none; }   /* op desktop tonen de banen wie wat doet */
 
 /* Van second brain naar company brain */
 .brain { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line); }
@@ -203,6 +221,9 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 @media (max-width: 900px) {
   .cards { grid-template-columns: minmax(0, 1fr); }
   .about .grid, .contact .grid, .brain { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+  .lanes { display: none; }
+  .step .who { display: flex; }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
@@ -218,6 +239,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
   .services { padding: 64px 0; }
   .cards { margin-top: 32px; gap: 16px; }
   .card { padding: 24px 22px 26px; }
+  .steps { grid-template-columns: minmax(0, 1fr); }
   .about, .contact { padding: 64px 0; }
   .stats .n { font-size: 34px; min-width: 80px; }
   .contact dl { font-size: 16px; }
@@ -278,16 +300,61 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
         <li class="card">
           <div class="title"><span class="dot" aria-hidden="true"></span><h3>AI-advies</h3></div>
           <p>Waar past AI in je bedrijf, waar niet, en wat mag het? Met een eerlijke businesscase: wat levert AI op?</p>
+          <p class="duur">Korte duurtijd</p>
         </li>
         <li class="card">
           <div class="title"><span class="dot" aria-hidden="true"></span><h3>Forward Deployed Engineer</h3></div>
           <p>Geen advies vanop afstand. Op locatie meebouwen tot de oplossing werkt.</p>
+          <p class="duur">Langere duurtijd</p>
         </li>
         <li class="card">
           <div class="title"><span class="dot" aria-hidden="true"></span><h3>Training</h3></div>
           <p>Hands-on opleiding waarin elke medewerker een eigen AIOS bouwt: een second brain.</p>
+          <p class="duur">Middellange duurtijd</p>
         </li>
       </ul>
+      <div class="traject">
+        <p class="label">Typisch traject</p>
+        <h3>Van cartografie tot aftercare.</h3>
+        <div class="lanes" aria-hidden="true">
+          <span class="lane" style="grid-row: 1; grid-column: 1 / 3">AI-advies</span>
+          <span class="lane" style="grid-row: 1; grid-column: 5 / 6">AI-advies</span>
+          <span class="lane" style="grid-row: 2; grid-column: 3 / 4">Forward Deployed Engineer</span>
+          <span class="lane" style="grid-row: 3; grid-column: 4 / 6">Training</span>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="n">01</span>
+            <h4>Cartografie</h4>
+            <p class="who">AI-advies</p>
+            <ul><li>Huidige IT-uitgaven, capex en opex</li><li>Technologieën in kaart</li><li>IT-partners in kaart</li></ul>
+          </li>
+          <li class="step">
+            <span class="n">02</span>
+            <h4>Strategie en plan</h4>
+            <p class="who">AI-advies</p>
+            <ul><li>Richting AI-native organisatie</li><li>Company brain</li><li>Transitie- en transformatieplan</li></ul>
+          </li>
+          <li class="step">
+            <span class="n">03</span>
+            <h4>Bouw</h4>
+            <p class="who">Forward Deployed Engineer</p>
+            <ul><li>Eenvoudig, met AI</li><li>Co-creation</li><li>Snel en agile</li></ul>
+          </li>
+          <li class="step">
+            <span class="n">04</span>
+            <h4>Opleiding</h4>
+            <p class="who">Training</p>
+            <ul><li>Adoptie</li><li>Training</li><li>De belangrijkste fase</li></ul>
+          </li>
+          <li class="step">
+            <span class="n">05</span>
+            <h4>Aftercare</h4>
+            <p class="who">AI-advies en training</p>
+            <ul><li>Onderhoud en extra training</li><li>Technology watch</li><li>Contract of op afroep</li></ul>
+          </li>
+        </ol>
+      </div>
       <div class="brain">
         <div>
           <p class="label">Second brain en company brain</p>
@@ -352,7 +419,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 
 <footer class="foot">
   <div class="wrap">
-    <span>Bijgewerkt op 4 november 2026 · v15 · Deze site gebruikt geen cookies</span>
+    <span>Bijgewerkt op 6 november 2026 · v16 · Deze site gebruikt geen cookies</span>
     <span class="company">Fender ICT bv · Goudbloemlaan 12, 2970 Schilde, België · Ondernemingsnummer BE 0465.243.969 · RPR Antwerpen, afdeling Antwerpen</span>
   </div>
 </footer>
