@@ -90,6 +90,7 @@ body {
   color: var(--ink);
   font-family: var(--sans);
   font-size: 17px;
+  font-weight: 500;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -131,7 +132,7 @@ a { color: inherit; }
   line-height: 1.04;
 }
 .hero h1 span { color: var(--baksteen-licht); }
-.hero .lead { margin: 28px 0 0; max-width: 680px; font-size: 19px; font-weight: 500; line-height: 1.6; color: var(--op-donker); }
+.hero .lead { margin: 28px 0 0; max-width: 680px; font-size: 20px; font-weight: 500; line-height: 1.5; color: var(--op-donker); }
 .hero .lead strong { font-weight: 700; color: #FFFFFF; }
 /* Knoppen zoals op filiptruyens.be: compact, lijnicoon, hoofdknop in Baksteen, de rest met een rand. */
 .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
@@ -161,11 +162,11 @@ a { color: inherit; }
 .card h3 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; }
 .card p { margin: 10px 0 0; padding-left: 22px; font-size: 16px; color: var(--ink-soft); }
 .card { display: flex; flex-direction: column; }
-.card .duur { margin-top: auto; padding: 18px 0 0 22px; line-height: 1.7; font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); }
+.card .duur { margin-top: auto; padding: 18px 0 0 22px; line-height: 1.6; font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); }
 
 /* Typisch traject: vijf stappen */
 .traject { margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line); }
-.traject h3 { margin: 14px 0 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+.traject h3 { margin: 14px 0 0; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
 .steps { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; counter-reset: stap; }
 .step { padding: 18px 16px 20px; border: 1px solid var(--line); border-top: 3px solid var(--baksteen); border-radius: 12px; background: var(--bg); }
 .step .n { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent-text); }
@@ -201,7 +202,7 @@ a { color: inherit; }
 .about { background: var(--band); padding: 88px 0; }
 .about .grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: center; }
 .about h2 { margin: 14px 0 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
-.about p.text { margin: 20px 0 0; font-size: 18px; color: var(--ink-soft); }
+.about p.text { margin: 20px 0 0; font-size: 17px; color: var(--ink-soft); }
 .label.mute { margin-bottom: 14px; color: var(--ink-soft); }
 .stats { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .stats li { display: flex; align-items: baseline; gap: 20px; padding: 20px 0; border-top: 1px solid var(--line); }
@@ -213,14 +214,14 @@ a { color: inherit; }
 .contact { padding: 88px 0 96px; }
 .contact .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: end; }
 .contact h2 { margin: 14px 0 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
-.contact dl { margin: 0; display: grid; grid-template-columns: auto 1fr; column-gap: 20px; row-gap: 12px; font-size: 18px; }
-.contact dt { font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--accent-text); padding-top: 4px; }
+.contact dl { margin: 0; display: grid; grid-template-columns: auto 1fr; column-gap: 20px; row-gap: 12px; font-size: 17px; }
+.contact dt { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent-text); padding-top: 4px; }
 .contact dd { margin: 0; font-weight: 600; }
 .contact dd a { text-decoration: none; border-bottom: 1px solid var(--line); }
 .contact dd a:hover { border-bottom-color: currentColor; }
 
 /* Voet */
-.foot { border-top: 1px solid var(--line); padding: 28px 0 36px; font-size: 13.5px; color: var(--ink-soft); }
+.foot { border-top: 1px solid var(--line); padding: 28px 0 36px; font-size: 14px; color: var(--ink-soft); }
 .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
 .foot .company { flex-basis: 100%; }
 
@@ -243,7 +244,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
   .logo .by { font-size: 7.5px; }
   .hero .lens-bg { width: 560px; height: 560px; right: -260px; top: -120px; }
   .hero-body { padding: 40px 0 48px; }
-  .hero .lead { font-size: 17px; }
+  .hero .lead { font-size: 18px; }
   .services { padding: 64px 0; }
   .cards { margin-top: 32px; gap: 16px; }
   .card { padding: 24px 22px 26px; }
@@ -433,7 +434,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 
 <footer class="foot">
   <div class="wrap">
-    <span>Bijgewerkt op 6 november 2026 · v22 · Deze site gebruikt geen cookies</span>
+    <span>Bijgewerkt op 6 november 2026 · v23 · Deze site gebruikt geen cookies</span>
     <span class="company">Fender ICT bv · Goudbloemlaan 12, 2970 Schilde, België · Ondernemingsnummer BE0465.243.969 · RPR Antwerpen, afdeling Antwerpen</span>
   </div>
 </footer>
