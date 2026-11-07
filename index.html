@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Advisory by Fender ICT</title>
-<meta name="description" content="AI Advisory is een brand van Fender ICT en een initiatief van Filip Truyens: één aanspreekpunt, van advies tot werkende oplossing.">
+<meta name="description" content="AI-advies en meebouwen voor kleine bedrijven, door Filip Truyens. Eén aanspreekpunt, en jij houdt de controle over je IT, je data en je AI.">
 <meta name="theme-color" content="#0B1F33">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI Advisory by Fender ICT">
-<meta property="og:description" content="Van idee tot AI met waarde, samen met je team.">
+<meta property="og:description" content="Van idee tot AI met waarde. Samen met je team, en helemaal van jou.">
 <meta property="og:url" content="https://fenderict.be/">
 <meta property="og:image" content="https://fenderict.be/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -153,6 +153,7 @@ a { color: inherit; }
 
 /* Diensten */
 .services { padding: 96px 0; }
+.services .steps { margin-top: 40px; }
 .section-head { display: flex; flex-direction: column; gap: 14px; max-width: 640px; }
 .section-head h2 { margin: 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
 .cards { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
@@ -201,14 +202,23 @@ a { color: inherit; }
 .quote figcaption { margin-top: 18px; font-size: 15px; font-weight: 500; color: var(--ink-soft); }
 .quote figcaption b { font-weight: 700; color: var(--ink); }
 
-/* Eigendom: wat van jou is, blijft van jou */
-.own-sec { padding: 88px 0; }
-.own { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: center; }
-.own h2 { margin: 14px 0 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
-.own p.text { margin: 16px 0 0; font-size: 17px; color: var(--ink-soft); }
-.own p.text strong { font-weight: 700; color: var(--ink); }
+/* Herkenbaar en Controle: tekst links, lijst rechts */
+.pain { padding: 96px 0 88px; }
+.split { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+.split h2 { margin: 14px 0 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
+.split p.text { margin: 16px 0 0; font-size: 17px; color: var(--ink-soft); }
+.split p.text strong { font-weight: 700; color: var(--ink); }
+.dark-sec { padding: 88px 0; background: var(--diepzee); color: var(--ink);
+  --ink: #FFFFFF; --ink-soft: var(--op-donker); --line: var(--diepzee-line); --accent-text: var(--baksteen-licht); }
+.dark-sec a { color: #FFFFFF; }
 .needs.own-list li { font-weight: 500; color: var(--ink-soft); }
 .needs.own-list li b { font-weight: 700; color: var(--ink); }
+/* Voor wie */
+.sectors { padding: 0 0 96px; }
+.cards.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.cards.four .card p { padding-left: 22px; }
+.about .actions { margin-top: 28px; }
+.contact p.text { margin: 16px 0 0; font-size: 17px; color: var(--ink-soft); }
 
 /* Over Filip */
 .about { background: var(--band); padding: 88px 0; }
@@ -241,7 +251,8 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 
 @media (max-width: 900px) {
   .cards { grid-template-columns: minmax(0, 1fr); }
-  .own, .about .grid, .contact .grid, .brain { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .cards.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .split, .about .grid, .contact .grid, .brain { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .quote { grid-template-columns: minmax(0, 1fr); margin-top: 48px; padding-top: 40px; }
   .quote .client { grid-row: auto; justify-self: start; margin-bottom: 20px; }
   .quote img { width: 96px; }
@@ -262,7 +273,9 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
   .cards { margin-top: 32px; gap: 16px; }
   .card { padding: 24px 22px 26px; }
   .steps { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-  .own-sec, .about, .contact, .brain-sec { padding: 64px 0; }
+  .pain, .dark-sec, .about, .contact, .brain-sec { padding: 64px 0; }
+  .sectors { padding: 0 0 64px; }
+  .cards.four { grid-template-columns: minmax(0, 1fr); }
   .stats .n { font-size: 34px; min-width: 80px; }
   .contact dl { font-size: 16px; }
 }
@@ -299,10 +312,10 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
     <div class="hero-body">
       <p class="label">AI Advisory by Fender ICT</p>
       <h1>Van idee tot AI met waarde. <span>Samen met je team, en helemaal van jou.</span></h1>
-      <p class="lead">AI Advisory is een brand van Fender ICT en een initiatief van Filip Truyens: één aanspreekpunt, van advies tot werkende oplossing. Samen kijken waar AI past, de oplossing op locatie mee bouwen, en uiteraard ook je team ermee leren werken. <strong>Zo krijg jij meer tijd voor wat alleen jij kunt doen. En het beste: alles wat we samen bouwen, blijft 100%&nbsp;jouw&nbsp;eigendom.</strong></p>
+      <p class="lead">Filip zoekt samen met jou waar AI tijd wint, bouwt de oplossing in je zaak tot ze draait, en leert je team ermee werken. Eén aanspreekpunt, van het eerste gesprek tot het resultaat. <strong>Zo krijg jij meer tijd voor wat alleen jij kunt doen. En het beste: alles wat we samen bouwen, blijft 100%&nbsp;jouw&nbsp;eigendom.</strong></p>
       <div class="actions">
+        <a class="btn" href="#contact"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="m2.5 4.5 5.5 4.5 5.5-4.5"/></svg>Plan 15 minuten</a>
         <a class="btn ghost" href="https://filiptruyens.be/nl/over-mij.html">Over Filip<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2.5h4.5V7M13.5 2.5 7 9"/></svg></a>
-        <a class="btn" href="mailto:filip@fenderict.be"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="m2.5 4.5 5.5 4.5 5.5-4.5"/></svg>Mail Filip</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/filiptruyens" rel="noopener" target="_blank">LinkedIn<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2.5h4.5V7M13.5 2.5 7 9"/></svg></a>
       </div>
     </div>
@@ -312,85 +325,109 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 </header>
 
 <main>
-  <section class="services" aria-labelledby="diensten">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Aanpak</p>
-        <h2 id="diensten">Drie pijlers, één traject.</h2>
+  <section class="pain" aria-labelledby="herkenbaar">
+    <div class="wrap split">
+      <div>
+        <p class="label">Herkenbaar?</p>
+        <h2 id="herkenbaar">Je zaak draait op wat in een paar hoofden zit.</h2>
+        <p class="text">Iedereen zegt dat je iets met AI moet doen. Maar een tool kopen of een cursus volgen verandert weinig aan je maandag. Wat ontbreekt, is iemand die het bij jou komt bouwen.</p>
       </div>
-      <ul class="cards">
-        <li class="card">
-          <div class="title"><span class="dot" aria-hidden="true"></span><h3>AI-advies</h3></div>
-          <p>Waar past AI in je organisatie, waar niet, en wat mag het? Je IT in kaart, een strategie en een plan met een eerlijke business case, en opvolging achteraf.</p>
-          <p class="duur">Korte duurtijd<br>Stap 01, 02 en 05</p>
-        </li>
-        <li class="card">
-          <div class="title"><span class="dot" aria-hidden="true"></span><h3>Forward Deployed Engineer</h3></div>
-          <p>Geen advies vanop afstand. Op locatie meebouwen tot de oplossing werkt.</p>
-          <p class="duur">Langere duurtijd<br>Stap 03</p>
-        </li>
-        <li class="card">
-          <div class="title"><span class="dot" aria-hidden="true"></span><h3>Training</h3></div>
-          <p>Je team leert werken met de oplossing, want adoptie maakt het verschil. Elke medewerker bouwt een eigen AIOS: een second brain.</p>
-          <p class="duur">Middellange duurtijd<br>Stap 04 en 05</p>
-        </li>
+      <ul class="needs own-list">
+        <li><span><b>Dezelfde vraag.</b> Klanten vragen wat al in hun documenten staat, en elke collega antwoordt net iets anders.</span></li>
+        <li><span><b>Zoeken.</b> In mails, pdf's, mappen en het geheugen van die ene collega die er net niet is.</span></li>
+        <li><span><b>Overtikken.</b> Van de ene tool naar de andere, omdat ze niet met elkaar praten.</span></li>
+        <li><span><b>Vastzitten.</b> Je leverancier beslist mee hoe je werkt, en wat het kost.</span></li>
       </ul>
-      <div class="traject">
-        <p class="label">Typisch traject</p>
-        <h3>Van cartografie tot aftercare.</h3>
-        <ol class="steps">
-          <li class="step" id="cartografie">
-            <span class="n">01</span>
-            <h4>Cartografie</h4>
-            <p class="who">AI-advies</p>
-            <ul><li>Huidige IT-uitgaven, capex en opex</li><li>Technologieën in kaart</li><li>IT-partners in kaart</li><li>Eigendom en contracten</li></ul>
-          </li>
-          <li class="step">
-            <span class="n">02</span>
-            <h4>Strategie en plan</h4>
-            <p class="who">AI-advies</p>
-            <ul><li>Richting AI-native organisatie</li><li>Company brain</li><li>Transitie- en transformatieplan</li></ul>
-          </li>
-          <li class="step">
-            <span class="n">03</span>
-            <h4>Bouw</h4>
-            <p class="who">Forward Deployed Engineer</p>
-            <ul><li>Eenvoudig, met AI</li><li>Co-creation</li><li>Snel en agile</li></ul>
-          </li>
-          <li class="step">
-            <span class="n">04</span>
-            <h4>Opleiding</h4>
-            <p class="who">Training</p>
-            <ul><li>Adoptie</li><li>Training</li><li>De belangrijkste fase</li></ul>
-          </li>
-          <li class="step">
-            <span class="n">05</span>
-            <h4>Aftercare</h4>
-            <p class="who">AI-advies en training</p>
-            <ul><li>Onderhoud en extra training</li><li>Technology watch</li><li>Contract of op afroep</li></ul>
-          </li>
-        </ol>
-      </div>
-      <div class="actions"><a class="btn ghost" href="https://filiptruyens.be/nl/ervaring.html">Ervaring Filip<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2.5h4.5V7M13.5 2.5 7 9"/></svg></a></div>
     </div>
   </section>
 
-  <section class="brain-sec" aria-labelledby="brain">
+  <section class="dark-sec" aria-labelledby="controle">
+    <div class="wrap split">
+      <div>
+        <p class="label">Controle</p>
+        <h2 id="controle">Neem de controle over je IT terug.</h2>
+        <p class="text"><strong>Vendor lock-in</strong> betekent dat je vastzit aan één IT-leverancier, omdat je data, toepassingen of accounts bij hem liggen. Het gevaar: hij bepaalt de prijs, overstappen wordt duur, en valt hij weg, dan kun je niet meer aan je eigen gegevens.</p>
+        <p class="text">Daarom begint elk traject met de <a href="#cartografie">cartografie</a>: van wie is wat? Wat niet van jou is, ontvlecht Filip daarna, zonder dat je zaak stilvalt.</p>
+      </div>
+      <ul class="needs own-list">
+        <li><span><b>Je data.</b> Je kunt ze zelf exporteren, wanneer je wil.</span></li>
+        <li><span><b>Je toepassingen.</b> Accounts, licenties en code zijn eigendom van je bedrijf.</span></li>
+        <li><span><b>Je AI.</b> De kennis, instructies en assistenten die we bouwen, horen bij jou.</span></li>
+        <li><span><b>Je keuze.</b> Wisselen van leverancier kan altijd. Ook weg van Filip.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="services" aria-labelledby="aanpak">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Aanpak</p>
+        <h2 id="aanpak">Van cartografie tot aftercare.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step" id="cartografie">
+          <span class="n">01</span>
+          <h4>Cartografie</h4>
+          <p class="who">Advies</p>
+          <ul><li>Wat kost je IT vandaag?</li><li>Welke tools en partners heb je?</li><li>Eigendom en contracten</li></ul>
+        </li>
+        <li class="step">
+          <span class="n">02</span>
+          <h4>Strategie en plan</h4>
+          <p class="who">Advies</p>
+          <ul><li>Waar AI loont, en waar niet</li><li>Wat je terugneemt van leveranciers</li><li>Een eerlijke business case</li></ul>
+        </li>
+        <li class="step">
+          <span class="n">03</span>
+          <h4>Bouw</h4>
+          <p class="who">Meebouwen bij jou</p>
+          <ul><li>Op locatie, naast je mensen</li><li>Op je eigen accounts</li><li>Klein beginnen, snel resultaat</li></ul>
+        </li>
+        <li class="step">
+          <span class="n">04</span>
+          <h4>Opleiding</h4>
+          <p class="who">Training</p>
+          <ul><li>Je team leert ermee werken</li><li>Elke medewerker een eigen second brain</li><li>De belangrijkste fase</li></ul>
+        </li>
+        <li class="step">
+          <span class="n">05</span>
+          <h4>Aftercare</h4>
+          <p class="who">Advies en training</p>
+          <ul><li>Onderhoud en extra training</li><li>Nieuwe mogelijkheden opvolgen</li><li>Contract of op afroep</li></ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sectors" aria-labelledby="voorwie">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Voor wie</p>
+        <h2 id="voorwie">Voor kleine bedrijven met een team dat te veel zoekt.</h2>
+      </div>
+      <ul class="cards four">
+        <li class="card"><div class="title"><span class="dot" aria-hidden="true"></span><h3>Reisbureau</h3></div><p>Reizigers krijgen antwoord uit hun eigen roadbook, in de toon van het bureau.</p></li>
+        <li class="card"><div class="title"><span class="dot" aria-hidden="true"></span><h3>Transportbedrijf</h3></div><p>Vrachtpapieren en opdrachten uit de mail, klaar voor planning en facturatie.</p></li>
+        <li class="card"><div class="title"><span class="dot" aria-hidden="true"></span><h3>Voedingsproducent</h3></div><p>Vragen over allergenen en houdbaarheid, beantwoord uit je eigen productfiches.</p></li>
+        <li class="card"><div class="title"><span class="dot" aria-hidden="true"></span><h3>Dienstverlener</h3></div><p>Een eerste offerte op basis van wat je eerder schreef, met je eigen prijzen.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="brain-sec" aria-labelledby="kennis">
     <div class="wrap brain">
       <div>
         <p class="label">Second brain en company brain</p>
-        <h2 id="brain">De echte winst zit in de kennis van je organisatie.</h2>
-        <p class="text"><strong>AI introduceren is geen IT-project.</strong> Het verandert hoe iedereen in je organisatie werkt. Losse processen automatiseren blijft nuttig, maar het is niet meer genoeg. Elke medewerker beschikt best over een eigen AIOS, een second brain, en werkt er dagelijks mee. Die kennis komt ook samen in een gedeelde laag, waar mensen en <span class="nobr">AI-agenten</span> samenwerken. Zo bouw je stap voor stap een company brain dat zichzelf continu verbetert.</p>
+        <h2 id="kennis">De echte winst zit in de kennis van je organisatie.</h2>
+        <p class="text"><strong>AI introduceren is geen IT-project.</strong> Het verandert hoe iedereen werkt. Elke medewerker krijgt een eigen assistent, een second brain. Wat het team weet, komt samen in één gedeelde laag: een company brain dat elke week slimmer wordt.</p>
       </div>
       <div>
-        <p class="label mute">Wat je organisatie hiervoor nodig heeft</p>
+        <p class="label mute">Wat je hiervoor nodig hebt</p>
         <ul class="needs">
-          <li>Buy-in op directieniveau</li>
           <li>Claude of ChatGPT met een teamplan</li>
-          <li>Opleiding voor alle kennismedewerkers</li>
-          <li>Een AI-champion in huis</li>
-          <li>IT mee aan tafel, van bij de start</li>
-          <li>Iemand die het mee uitrolt tot het werkt: een Forward Deployed Engineer</li>
+          <li>Een zaakvoerder die erachter staat</li>
+          <li>Een collega die mee trekt</li>
+          <li>Een partner die het uitrolt tot het werkt</li>
         </ul>
       </div>
     </div>
@@ -405,38 +442,20 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
     </div>
   </section>
 
-  <section class="own-sec" aria-labelledby="eigendom">
-    <div class="wrap own">
-      <div>
-        <p class="label">Eigendom</p>
-        <h2 id="eigendom">Wat van jou is, blijft van jou.</h2>
-        <p class="text"><strong>Vendor lock-in</strong> betekent dat je vastzit aan één IT-leverancier, omdat je data, toepassingen of accounts bij hem liggen. Het gevaar: hij bepaalt de prijs, overstappen wordt duur, en valt hij weg, dan kun je niet meer aan je eigen gegevens.</p>
-        <p class="text">Daarom begint elk traject met de <a href="#cartografie">cartografie</a>: van wie is wat? Wat niet van jou is, ontvlecht Filip daarna, zonder dat je zaak stilvalt.</p>
-      </div>
-      <div>
-        <ul class="needs own-list">
-          <li><span><b>Je data.</b> Je kunt ze zelf exporteren, wanneer je wil.</span></li>
-          <li><span><b>Je toepassingen.</b> Accounts, licenties en code zijn eigendom van je bedrijf.</span></li>
-          <li><span><b>Je AI.</b> De kennis, instructies en assistenten die we bouwen, horen bij jou.</span></li>
-          <li><span><b>Je keuze.</b> Wisselen van leverancier kan altijd. Ook weg van Filip.</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <section class="about" aria-labelledby="over">
     <div class="wrap grid">
       <div>
         <p class="label">Wie</p>
         <h2 id="over">Filip Truyens</h2>
         <p class="text">Filip weet hoe moeilijk IT-transformatie kan zijn, bij banken, verzekeraars en de overheid: organisaties waar fouten duur zijn. Die ervaring zet hij nu in bij kleinere ondernemingen.</p>
-        <p class="text">Een goede Forward Deployed Engineer is meer dan een engineer. Filip brengt mee wat het vraagt:</p>
+        <p class="text">Hij werkt als Forward Deployed Engineer: geen rapport vanop afstand, wel aan jouw tafel. Hij brengt mee wat dat vraagt:</p>
         <ul class="needs fde">
           <li>Strategie: hij adviseert de directie en rekent de business case uit</li>
-          <li>IT en security: hij kent de regels en spreekt de taal van de IT-afdeling</li>
+          <li>IT en security: hij kent de regels en spreekt de taal van je IT-partner</li>
           <li>Verandering: hij betrekt de gebruikers van bij de start</li>
           <li>Oplossingen: sinds eind 2025 bouwt hij zelf, met AI</li>
         </ul>
+        <div class="actions"><a class="btn ghost" href="https://filiptruyens.be/nl/ervaring.html">Ervaring Filip<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2.5h4.5V7M13.5 2.5 7 9"/></svg></a></div>
       </div>
       <div>
       <p class="label mute">Kerncijfers</p>
@@ -453,10 +472,11 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
     <div class="wrap grid">
       <div>
         <p class="label">Contact</p>
-        <h2 id="contact">Een idee voor AI in je bedrijf? Laten we praten.</h2>
+        <h2 id="contact">Eén gesprek van 15 minuten.</h2>
+        <p class="text">Vertel waar je tijd naartoe gaat. Filip zegt eerlijk of AI kan helpen, en waar.</p>
       </div>
       <dl>
-        <dt>E</dt><dd><a href="mailto:filip@fenderict.be">filip@fenderict.be</a></dd>
+        <dt>E</dt><dd><a href="mailto:filip@fenderict.be?subject=Gesprek%20van%2015%20minuten">filip@fenderict.be</a></dd>
         <dt>M</dt><dd><a href="tel:+32476453354">+32 476 45 33 54</a></dd>
         <dt>W</dt><dd><a href="https://filiptruyens.be/">filiptruyens.be</a></dd>
       </dl>
@@ -466,7 +486,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 
 <footer class="foot">
   <div class="wrap">
-    <span>Bijgewerkt op 7 november 2026 · v31 · Deze site gebruikt geen cookies</span>
+    <span>Bijgewerkt op 7 november 2026 · v32 · Deze site gebruikt geen cookies</span>
     <span class="company">Fender ICT bv · Goudbloemlaan 12, 2970 Schilde, België · Ondernemingsnummer BE0465.243.969 · RPR Antwerpen, afdeling Antwerpen</span>
   </div>
 </footer>
