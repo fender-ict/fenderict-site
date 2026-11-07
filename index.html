@@ -206,6 +206,7 @@ a { color: inherit; }
 .own { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: center; }
 .own h2 { margin: 14px 0 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
 .own p.text { margin: 16px 0 0; font-size: 17px; color: var(--ink-soft); }
+.own p.text strong { font-weight: 700; color: var(--ink); }
 .needs.own-list li { font-weight: 500; color: var(--ink-soft); }
 .needs.own-list li b { font-weight: 700; color: var(--ink); }
 
@@ -342,7 +343,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
             <span class="n">01</span>
             <h4>Cartografie</h4>
             <p class="who">AI-advies</p>
-            <ul><li>Huidige IT-uitgaven, capex en opex</li><li>Technologieën in kaart</li><li>IT-partners in kaart</li><li>Eigendom van data en toepassingen</li></ul>
+            <ul><li>Huidige IT-uitgaven, capex en opex</li><li>Technologieën in kaart</li><li>IT-partners in kaart</li><li>Eigendom en contracten</li></ul>
           </li>
           <li class="step">
             <span class="n">02</span>
@@ -409,15 +410,15 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
       <div>
         <p class="label">Eigendom</p>
         <h2 id="eigendom">Wat van jou is, blijft van jou.</h2>
-        <p class="text">Vaak staan je data, je toepassingen en zelfs je accounts op naam van een IT-leverancier. Dan beslist die mee over je zaak, en wordt elke verandering duur.</p>
-        <p class="text">Daarom begint elk traject met de <a href="#cartografie">cartografie</a>. Filip brengt je IT-uitgaven, technologieën en partners in kaart, en zoekt uit wie eigenaar is van je data, toepassingen en accounts. Wat niet op jouw naam staat, ontvlecht hij daarna stap voor stap, zonder je werking stil te leggen.</p>
+        <p class="text"><strong>Vendor lock-in</strong> betekent dat je vastzit aan één IT-leverancier, omdat je data, toepassingen of accounts bij hem liggen. Het gevaar: hij bepaalt de prijs, overstappen wordt duur, en valt hij weg, dan kun je niet meer aan je eigen gegevens.</p>
+        <p class="text">Daarom begint elk traject met de <a href="#cartografie">cartografie</a>: van wie is wat? Wat niet van jou is, ontvlecht Filip daarna, zonder dat je zaak stilvalt.</p>
       </div>
       <div>
         <ul class="needs own-list">
-          <li><span><b>Je data.</b> Op naam van je bedrijf, en je kunt ze altijd zelf exporteren.</span></li>
-          <li><span><b>Je toepassingen.</b> Accounts, licenties en code staan op jouw naam, niet op die van een leverancier.</span></li>
-          <li><span><b>Je AI.</b> De kennis, instructies en assistenten die we bouwen, zijn van jou.</span></li>
-          <li><span><b>Je keuze.</b> Je kunt altijd van leverancier wisselen. Ook weg van Filip.</span></li>
+          <li><span><b>Je data.</b> Je kunt ze zelf exporteren, wanneer je wil.</span></li>
+          <li><span><b>Je toepassingen.</b> Accounts, licenties en code zijn eigendom van je bedrijf.</span></li>
+          <li><span><b>Je AI.</b> De kennis, instructies en assistenten die we bouwen, horen bij jou.</span></li>
+          <li><span><b>Je keuze.</b> Wisselen van leverancier kan altijd. Ook weg van Filip.</span></li>
         </ul>
       </div>
     </div>
