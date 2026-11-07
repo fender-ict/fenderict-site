@@ -154,6 +154,18 @@ a { color: inherit; }
 /* Diensten */
 .services { padding: 96px 0; }
 .services .steps { margin-top: 40px; }
+/* Drie rollen, drie tarieven */
+.rates { margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line); }
+.rates h3 { margin: 14px 0 0; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+.rates .tbl { margin-top: 24px; overflow-x: auto; }
+.rates table { width: 100%; min-width: 360px; border-collapse: collapse; font-size: 16px; }
+.rates th, .rates td { text-align: left; padding: 14px 16px 14px 0; border-top: 1px solid var(--line); vertical-align: top; }
+.rates tr:last-child th, .rates tr:last-child td { border-bottom: 1px solid var(--line); }
+.rates thead th { border-top: 0; font-size: 18px; font-weight: 700; color: var(--ink); }
+.rates tbody th { font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); padding-top: 17px; }
+.rates td { color: var(--ink-soft); }
+.rates td.eur { font-weight: 800; letter-spacing: 0.06em; color: var(--ink); }
+.rates p.text { margin: 20px 0 0; max-width: 720px; font-size: 17px; color: var(--ink-soft); }
 .section-head { display: flex; flex-direction: column; gap: 14px; max-width: 640px; }
 .section-head h2 { margin: 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
 .cards { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
@@ -396,6 +408,21 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
           <ul><li>Onderhoud en extra training</li><li>Technology watch</li></ul>
         </li>
       </ol>
+      <div class="rates">
+        <p class="label">Tarieven</p>
+        <h3>Drie rollen, drie tarieven.</h3>
+        <div class="tbl">
+          <table>
+            <thead><tr><td></td><th scope="col">Advies</th><th scope="col">Training</th><th scope="col">Bouw</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Stappen</th><td>01, 02 en 05</td><td>04 en 05</td><td>03</td></tr>
+              <tr><th scope="row">Duurtijd</th><td>Kort</td><td>Middellang</td><td>Langst</td></tr>
+              <tr><th scope="row">Dagtarief</th><td class="eur" aria-label="hoogste">€€€</td><td class="eur" aria-label="middelste">€€</td><td class="eur" aria-label="laagste">€</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text">Het hoogste tarief betaal je alleen voor een paar adviesdagen. Het meeste werk, het bouwen, loopt aan het laagste tarief.</p>
+      </div>
     </div>
   </section>
 
