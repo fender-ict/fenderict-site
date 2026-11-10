@@ -181,6 +181,8 @@ a { color: inherit; }
 .step .who::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 7px; border-radius: 50%; background: var(--baksteen); }
 .step ul { list-style: none; margin: 12px 0 0; padding: 0; }
 .step li { position: relative; padding-left: 14px; margin-top: 6px; font-size: 15px; line-height: 1.45; color: var(--ink-soft); }
+.step li a { color: var(--ink); text-underline-offset: 3px; text-decoration-color: var(--line-strong); }
+.step li a:hover { text-decoration-color: currentColor; }
 .step li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 5px; height: 5px; border-radius: 50%; background: var(--baksteen); }
 
 /* Van second brain naar company brain */
@@ -403,7 +405,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
           <h4>Aftercare</h4>
           <p class="who">Advies en training</p>
           <p class="tarief">Uurtarief <b>€€€ / €€</b></p>
-          <ul><li>Onderhoud en extra training</li><li>Technology watch</li></ul>
+          <ul><li>Onderhoud en extra training</li><li><a href="https://claude.ai/artifact/5ppw6gU67wgShuY41JrjhB" rel="noopener" target="_blank">Technology watch</a></li></ul>
         </li>
       </ol>
       <p class="rates-note"><span class="eur">€€€</span> hoogste uurtarief, <span class="eur">€</span> laagste. Het hoogste tarief betaal je alleen voor het korte advieswerk. Het meeste werk, het bouwen, loopt aan het laagste tarief.</p>
@@ -475,6 +477,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
         <dt>E</dt><dd><a href="mailto:filip@fenderict.be?subject=Gesprek%20van%2015%20minuten">filip@fenderict.be</a></dd>
         <dt>M</dt><dd><a href="tel:+32476453354">+32 476 45 33 54</a></dd>
         <dt>W</dt><dd><a href="https://filiptruyens.be/">filiptruyens.be</a></dd>
+        <dt>R</dt><dd><a href="https://claude.ai/artifact/5ppw6gU67wgShuY41JrjhB" rel="noopener" target="_blank">AI-radar, elke werkdag</a></dd>
       </dl>
     </div>
   </section>
@@ -482,7 +485,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 
 <footer class="foot">
   <div class="wrap">
-    <span>Bijgewerkt op 10 november 2026 · v34 · Deze site gebruikt geen cookies</span>
+    <span>Bijgewerkt op 10 november 2026 · v35 · Deze site gebruikt geen cookies</span>
     <span class="company">Fender ICT bv · Goudbloemlaan 12, 2970 Schilde, België · Ondernemingsnummer BE0465.243.969 · RPR Antwerpen, afdeling Antwerpen</span>
   </div>
 </footer>
