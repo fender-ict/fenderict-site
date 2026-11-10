@@ -130,10 +130,10 @@ a { color: inherit; }
 .hero .btn.ghost { color: #FFFFFF; border-color: #34506B; }
 .hero .btn.ghost:hover { border-color: #FFFFFF; }
 .btn svg { width: 16px; height: 16px; flex: none; }
-.tagline { border-top: 1px solid var(--diepzee-line); padding: 24px 0 32px; font-size: 15px; font-weight: 600; color: var(--op-donker-mute); }
+.tagline { margin: 0; border-bottom: 1px solid var(--diepzee-line); padding: 0 0 24px; font-size: 15px; font-weight: 600; color: var(--op-donker-mute); }
 
 /* Diensten */
-.services { padding: 96px 0; }
+.services { padding: 88px 0; }
 .services .steps { margin-top: 40px; }
 /* Tarief per stap */
 .step .tarief { margin: 4px 0 0 16px; font-size: 14px; color: var(--ink-soft); }
@@ -167,7 +167,7 @@ a { color: inherit; }
 .step li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 5px; height: 5px; border-radius: 50%; background: var(--baksteen); }
 
 /* Van second brain naar company brain */
-.brain { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+.brain { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: start; }
 .brain-sec { padding: 88px 0; background: var(--diepzee); color: var(--ink);
   --ink: #FFFFFF; --ink-soft: var(--op-donker); --line: var(--diepzee-line); --accent-text: var(--baksteen-licht); }
 .brain h2 { margin: 14px 0 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
@@ -181,7 +181,7 @@ a { color: inherit; }
 .needs.fde { margin-top: 20px; }
 
 /* Testimonial: logo links, citaat rechts */
-.quote { margin: 64px 0 0; padding-top: 48px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 132px minmax(0, 1fr); column-gap: 48px; align-items: center; }
+.quote { margin: 72px 0 0; display: grid; grid-template-columns: 132px minmax(0, 1fr); column-gap: 48px; align-items: center; }
 .quote .client { grid-row: 1 / span 2; display: block; border-radius: 8px; transition: opacity .15s ease; }
 .quote .client:hover { opacity: .85; }
 .quote img { width: 132px; height: auto; display: block; }
@@ -191,8 +191,8 @@ a { color: inherit; }
 .quote figcaption b { font-weight: 700; color: var(--ink); }
 
 /* Herkenbaar en Controle: tekst links, lijst rechts */
-.pain { padding: 96px 0 88px; }
-.split { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+.pain { padding: 88px 0; }
+.split { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: start; }
 .split h2 { margin: 14px 0 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
 .split p.text { margin: 16px 0 0; font-size: 17px; color: var(--ink-soft); }
 .split p.text strong { font-weight: 700; color: var(--ink); }
@@ -210,7 +210,7 @@ a { color: inherit; }
 
 /* Over Filip */
 .about { background: var(--band); padding: 88px 0; }
-.about .grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+.about .grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: start; }
 .about h2 { margin: 14px 0 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
 .about p.text { margin: 20px 0 0; font-size: 17px; color: var(--ink-soft); }
 .label.mute { margin-bottom: 14px; color: var(--ink-soft); }
@@ -221,8 +221,8 @@ a { color: inherit; }
 .stats .t { font-size: 16px; color: var(--ink-soft); }
 
 /* Contact */
-.contact { padding: 88px 0 96px; }
-.contact .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: end; }
+.contact { padding: 88px 0; }
+.contact .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start; }
 .contact h2 { margin: 14px 0 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
 .contact dl { margin: 0; display: grid; grid-template-columns: auto 1fr; column-gap: 20px; row-gap: 12px; font-size: 17px; }
 .contact dt { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent-text); padding-top: 4px; }
@@ -232,7 +232,9 @@ a { color: inherit; }
 
 /* Voet */
 .foot { position: relative; padding: 28px 0 36px; font-size: 14px; color: var(--ink-soft); }
-/* Tussen de secties: een dunne lijn binnen de kolom, geen kleurblok (v36) */
+/* Tussen de secties: een dunne lijn binnen de kolom, geen kleurblok (v36).
+   Elke sectie heeft boven en onder 88 px (gsm 64 px) en beide kolommen starten bovenaan,
+   zodat de afstand tussen lijn en tekst overal gelijk is (v38). */
 main > section { position: relative; }
 main > section + section::before, .foot::before {
   content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
@@ -247,7 +249,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
   .cards { grid-template-columns: minmax(0, 1fr); }
   .cards.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .split, .about .grid, .contact .grid, .brain { grid-template-columns: minmax(0, 1fr); gap: 40px; }
-  .quote { grid-template-columns: minmax(0, 1fr); margin-top: 48px; padding-top: 40px; }
+  .quote { grid-template-columns: minmax(0, 1fr); margin-top: 48px; }
   .quote .client { grid-row: auto; justify-self: start; margin-bottom: 20px; }
   .quote img { width: 96px; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
@@ -473,7 +475,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 
 <footer class="foot">
   <div class="wrap">
-    <span>Bijgewerkt op 10 november 2026 · v36 · Deze site gebruikt geen cookies</span>
+    <span>Bijgewerkt op 10 november 2026 · v38 · Deze site gebruikt geen cookies</span>
     <span class="company">Fender ICT bv · Goudbloemlaan 12, 2970 Schilde, België · Ondernemingsnummer BE0465.243.969 · RPR Antwerpen, afdeling Antwerpen</span>
   </div>
 </footer>
