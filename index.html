@@ -46,39 +46,20 @@
   --op-donker: #C5D0DB;
   --op-donker-mute: #A9B8C7;
 
-  --bg: #FFFFFF;
-  --band: var(--nevel);
-  --ink: var(--diepzee);
-  --ink-soft: var(--leisteen);
-  --line: #D9E0E7;
-  --line-strong: #C3CDD7;
-  --accent-text: var(--baksteen);
-
-  --sans: "Manrope", "Segoe UI", system-ui, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
-  --wrap: 1120px;
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #081827;
-    --band: var(--diepzee);
-    --ink: #FFFFFF;
-    --ink-soft: var(--op-donker);
-    --line: var(--diepzee-line);
-    --line-strong: #34506B;
-    --accent-text: var(--baksteen-licht);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #081827;
+  /* Eén ondergrond voor de hele pagina: altijd Diepzee, ook in lichte modus (zoals filiptruyens.be),
+     zodat je op een groot scherm geen harde overgangen tussen secties ziet (v36). */
+  --bg: var(--diepzee);
   --band: var(--diepzee);
+  --panel: var(--diepzee-2);
   --ink: #FFFFFF;
   --ink-soft: var(--op-donker);
   --line: var(--diepzee-line);
   --line-strong: #34506B;
   --accent-text: var(--baksteen-licht);
+
+  --sans: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --wrap: 1120px;
   color-scheme: dark;
 }
 
@@ -162,7 +143,7 @@ a { color: inherit; }
 .section-head { display: flex; flex-direction: column; gap: 14px; max-width: 640px; }
 .section-head h2 { margin: 0; font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
 .cards { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.card { padding: 30px 28px 32px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); }
+.card { padding: 30px 28px 32px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
 .card .title { display: flex; align-items: flex-start; gap: 12px; }
 .card .dot { flex: none; width: 10px; height: 10px; margin-top: 9px; border-radius: 50%; background: var(--baksteen); }
 .card h3 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; }
@@ -174,7 +155,7 @@ a { color: inherit; }
 .traject { margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line); }
 .traject h3 { margin: 14px 0 0; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
 .steps { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; counter-reset: stap; }
-.step { padding: 18px 16px 20px; border: 1px solid var(--line); border-top: 3px solid var(--baksteen); border-radius: 12px; background: var(--bg); }
+.step { padding: 18px 16px 20px; border: 1px solid var(--line); border-top: 3px solid var(--baksteen); border-radius: 12px; background: var(--panel); }
 .step .n { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent-text); }
 .step h4 { margin: 6px 0 0; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; }
 .step .who { display: flex; align-items: flex-start; gap: 8px; margin: 6px 0 0; font-size: 14px; font-weight: 700; color: var(--ink); }
@@ -250,7 +231,13 @@ a { color: inherit; }
 .contact dd a:hover { border-bottom-color: currentColor; }
 
 /* Voet */
-.foot { border-top: 1px solid var(--line); padding: 28px 0 36px; font-size: 14px; color: var(--ink-soft); }
+.foot { position: relative; padding: 28px 0 36px; font-size: 14px; color: var(--ink-soft); }
+/* Tussen de secties: een dunne lijn binnen de kolom, geen kleurblok (v36) */
+main > section { position: relative; }
+main > section + section::before, .foot::before {
+  content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: min(calc(var(--wrap) - 64px), calc(100% - 64px)); height: 1px; background: var(--line);
+}
 .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
 .foot .company { flex-basis: 100%; }
 
@@ -266,6 +253,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
 }
 @media (max-width: 640px) {
+  main > section + section::before, .foot::before { width: calc(100% - 40px); }
   body { font-size: 16px; }
   .wrap { padding: 0 20px; }
   .top { padding: 22px 0; }
@@ -485,7 +473,7 @@ a:focus-visible { outline: 2px solid var(--baksteen-licht); outline-offset: 3px;
 
 <footer class="foot">
   <div class="wrap">
-    <span>Bijgewerkt op 10 november 2026 · v35 · Deze site gebruikt geen cookies</span>
+    <span>Bijgewerkt op 10 november 2026 · v36 · Deze site gebruikt geen cookies</span>
     <span class="company">Fender ICT bv · Goudbloemlaan 12, 2970 Schilde, België · Ondernemingsnummer BE0465.243.969 · RPR Antwerpen, afdeling Antwerpen</span>
   </div>
 </footer>
